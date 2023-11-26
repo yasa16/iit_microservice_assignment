@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: issues-service
+  labels:
+    app: issues-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: issues-service
+  template:
+    metadata:
+      labels:
+        app: issues-service
+    spec:
+      containers:
+        - name: issues-service
+          image: senuradockacc/issues-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3002

@@ -1,0 +1,36 @@
+Commands
+
+Commit Service
+================================================================
+
+docker build -t senuradockacc/commit-service:latest .
+
+docker container run -d -p 3000:3000 senuradockacc/commit-service:latest
+
+docker container ls
+
+docker container stop {CONTAINER_ID}
+
+
+Issue Service
+================================================================
+
+docker build -t senuradockacc/issues-service:latest .
+
+docker container run -d -p 3002:3002 senuradockacc/issues-service:latest
+
+docker container ls
+
+docker container stop {CONTAINER_ID}
+
+
+Pull Request Service
+================================================================
+
+docker build -t senuradockacc/pull-request-service:latest .
+
+docker container run -d -p 3001:3001 senuradockacc/pull-request-service:latest
+
+docker container ls
+
+docker container stop {CONTAINER_ID}

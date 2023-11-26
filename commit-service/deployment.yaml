@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commit-service
+  labels:
+    app: commit-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: commit-service
+  template:
+    metadata:
+      labels:
+        app: commit-service
+    spec:
+      containers:
+        - name: commit-service
+          image: senuradockacc/commit-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000

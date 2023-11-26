@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pull-request-service
+  labels:
+    app: pull-request-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pull-request-service
+  template:
+    metadata:
+      labels:
+        app: pull-request-service
+    spec:
+      containers:
+        - name: pull-request-service
+          image: senuradockacc/pull-request-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3001
